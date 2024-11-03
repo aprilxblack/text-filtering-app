@@ -17,7 +17,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TextFilteringApp\TextFilteringApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="test-input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -4,4 +4,6 @@
 
 /.vs
 /TextFilteringApp/obj
-/TextFilteringApp/bin/Debug/net8.0
+/TextFilteringApp/bin
+/TextFilteringApp.Tests/obj
+/TextFilteringApp.Tests/bin
