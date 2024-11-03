@@ -2,7 +2,7 @@
 
 namespace TextFilteringApp.Services.Filtering
 {
-    public class ExcludeWordsWithVowelInTheMiddleFilter : IFilter
+    public class ExcludeWithVowelInTheMiddleFilter : IFilter
     {
         private char[] vowels = ['a', 'e', 'i', 'o', 'u'];
         public string[] Filter(string[] input)

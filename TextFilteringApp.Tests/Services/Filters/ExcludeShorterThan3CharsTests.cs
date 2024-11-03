@@ -14,10 +14,10 @@ namespace TextFilteringApp.Tests.Services.Filters
         [Fact]
         public void Filter_ShouldExludeWordsShorterThan3Chars()
         {
-            string[] input = ["Yes", "Karolina", "Zdziarska", "is", "a", "Senior", "Software", "Developer"];
+            string[] input = ["Yes,", "Karolina", "Zdziarska", "is", "a", "Senior", "Software", "Developer"];
             var result = _sut.Filter(input);
 
-            Assert.Equal(["Yes", "Karolina", "Zdziarska", "Senior", "Software", "Developer"], result);
+            Assert.Equal(["Yes,", "Karolina", "Zdziarska", "Senior", "Software", "Developer"], result);
         }
     }
 }
