@@ -7,3 +7,5 @@
 /TextFilteringApp/bin
 /TextFilteringApp.Tests/obj
 /TextFilteringApp.Tests/bin
+/TextFilteringApp.Tests/obj/Debug/
+/TextFilteringApp.Tests/obj/
