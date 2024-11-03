@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using TextFilteringApp.Services;
+
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddSingleton<IFileReader, TextFileReader>();
+using IHost host = builder.Build();
+
+Console.WriteLine("hello world");
