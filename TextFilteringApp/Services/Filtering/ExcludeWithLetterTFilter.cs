@@ -1,6 +1,6 @@
 ﻿namespace TextFilteringApp.Services.Filtering
 {
-    public class ExcludeWithLetterT : IFilter
+    public class ExcludeWithLetterTFilter : IFilter
     {
         public string[] Filter(string[] input)
         {

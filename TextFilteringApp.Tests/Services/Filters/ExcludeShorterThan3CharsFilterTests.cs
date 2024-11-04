@@ -2,13 +2,13 @@
 
 namespace TextFilteringApp.Tests.Services.Filters
 {
-    public class ExcludeShorterThan3CharsTests
+    public class ExcludeShorterThan3CharsFilterTests
     {
-        public ExcludeShorterThan3Chars _sut;
+        public ExcludeShorterThan3CharsFilter _sut;
 
-        public ExcludeShorterThan3CharsTests()
+        public ExcludeShorterThan3CharsFilterTests()
         {
-            _sut = new ExcludeShorterThan3Chars();
+            _sut = new ExcludeShorterThan3CharsFilter();
         }
 
         [Fact]

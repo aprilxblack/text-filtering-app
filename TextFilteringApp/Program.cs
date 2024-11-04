@@ -4,8 +4,8 @@ using TextFilteringApp.Services.Filtering;
 
 var fileReader = new TextFileReader();
 var filter1 = new ExcludeWithVowelInTheMiddleFilter();
-var filter2 = new ExcludeShorterThan3Chars();
-var filter3 = new ExcludeWithLetterT();
+var filter2 = new ExcludeShorterThan3CharsFilter();
+var filter3 = new ExcludeWithLetterTFilter();
 
 var content = await fileReader.ReadAsStringAsync("input.txt");
 

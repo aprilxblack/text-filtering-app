@@ -2,13 +2,13 @@
 
 namespace TextFilteringApp.Tests.Services.Filters
 {
-    public class ExcludeWithLetterTTests
+    public class ExcludeWithLetterTFilterTests
     {
-        private ExcludeWithLetterT _sut;
+        private ExcludeWithLetterTFilter _sut;
 
-        public ExcludeWithLetterTTests()
+        public ExcludeWithLetterTFilterTests()
         {
-            _sut = new ExcludeWithLetterT();
+            _sut = new ExcludeWithLetterTFilter();
         }
 
         [Fact]

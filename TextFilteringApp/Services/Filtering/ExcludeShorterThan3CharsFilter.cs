@@ -2,7 +2,7 @@
 
 namespace TextFilteringApp.Services.Filtering
 {
-    public class ExcludeShorterThan3Chars : IFilter
+    public class ExcludeShorterThan3CharsFilter : IFilter
     {
         public string[] Filter(string[] input)
         {
