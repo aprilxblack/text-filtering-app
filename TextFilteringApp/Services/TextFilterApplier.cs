@@ -6,17 +6,17 @@ namespace TextFilteringApp.Services
 {
     public class TextFilterApplier
     {
-        private readonly IFilter _filter;
+        private readonly IList<IFilter> _filters;
 
-        public TextFilterApplier(IFilter filter)
+        public TextFilterApplier(IList<IFilter> filters)
         {
-            _filter = filter;
+            _filters = filters;
         }
 
         public string Apply(string input)
         {
             var separated = SeparateTextIntoWords(input);
-            var filtered = _filter.Filter(separated);
+            var filtered = _filters.Aggregate(separated, (current, filter) => filter.Filter(current));
             return string.Join(" ", filtered);
         }
 
