@@ -19,5 +19,5 @@ var filter3 = new ExcludeWithLetterT();
 
 var content = await fileReader.ReadAsStringAsync("input.txt");
 
-var applier = new TextFilterApplier(filter2);
+var applier = new TextFilterApplier(filter1);
 Console.WriteLine(applier.Apply(content));

@@ -4,7 +4,7 @@ namespace TextFilteringApp.Services.Filtering
 {
     public class ExcludeWithVowelInTheMiddleFilter : IFilter
     {
-        private char[] vowels = ['a', 'e', 'i', 'o', 'u'];
+        private char[] vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
         public string[] Filter(string[] input)
         {
             return input.Where(x => !HasVowelInTheMiddle(x.StripPunctuation())).ToArray();
