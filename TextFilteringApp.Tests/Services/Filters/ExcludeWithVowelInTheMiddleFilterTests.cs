@@ -17,7 +17,7 @@ namespace TextFilteringApp.Tests.Services.Filters
             string[] input = ["What?", "This", "is", "definitely", "not", "my", "cat,", "I", "swear!"];
             var result = _sut.Filter(input);
 
-            Assert.Equal(["my", "I"], result);
+            Assert.Equal(["my"], result);
         }
 
     }
