@@ -22,7 +22,7 @@ namespace TextFilteringApp.Services
 
         private string[] SeparateTextIntoWords(string input)
         {
-            return Regex.Matches(input, @"[^\s]+").Cast<Match>().Select(m => m.Value).ToArray();
+            return Regex.Matches(input, @"\b\w+('\w+)?[^\w\s]*").Cast<Match>().Select(m => m.Value.Trim()).ToArray();
         }
     }
 }
