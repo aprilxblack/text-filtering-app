@@ -1,4 +1,5 @@
-﻿using NSubstitute;
+﻿using Moq;
+using NSubstitute;
 using TextFilteringApp.Services;
 using TextFilteringApp.Services.Filtering;
 
@@ -15,9 +16,16 @@ namespace TextFilteringApp.Tests.Services
         }
 
         [Fact]
-        public void GivenTextInput_ShouldFilterCorrectly()
+        public void GivenTextInput_ShouldApplyFilter()
         {
+            var input = "Here is some text input: let's filter it";
+            var filteredInput = new string[] { "Here", "some", "text", "input:", "let's", "filter" };
+            _filter.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(filteredInput);
 
+            var expectedOutput = "Here some text input: let's filter";
+
+            var result = _sut.Apply(input);
+            Assert.Equal(expectedOutput, result);
         }
 
         [Theory]
