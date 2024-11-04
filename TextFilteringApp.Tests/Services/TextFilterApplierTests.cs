@@ -22,11 +22,11 @@ namespace TextFilteringApp.Tests.Services
         {
             var input = "Here is some text input: let's filter it";
 
-            _filter1.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some", "text", "input:", "let's", "filter" });
+            _filter1.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "some", "text", "input:", "let's", "filter" });
             _filter2.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some", "text", "input:", "let's", "filter", "it"});
-            _filter3.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some" });
+            _filter3.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "some" });
 
-            var expectedOutput = "Here is some";
+            var expectedOutput = "Here some";
 
             var result = _sut.Apply(input);
             Assert.Equal(expectedOutput, result);
