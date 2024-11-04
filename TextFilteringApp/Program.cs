@@ -17,3 +17,4 @@ var applier = new TextFilterApplier([filter1, filter2, filter3]);
 
 Console.WriteLine("Filtered text:");
 Console.WriteLine(applier.Apply(content));
+Console.ReadKey();
