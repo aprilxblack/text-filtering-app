@@ -8,21 +8,25 @@ namespace TextFilteringApp.Tests.Services
     public class TextFilterApplierTests
     {
         private TextFilterApplier _sut;
-        private IFilter _filter = Substitute.For<IFilter>();
+        private IFilter _filter1 = Substitute.For<IFilter>();
+        private IFilter _filter2 = Substitute.For<IFilter>();
+        private IFilter _filter3 = Substitute.For<IFilter>();
 
         public TextFilterApplierTests()
         {
-            _sut = new TextFilterApplier(_filter);
+            _sut = new TextFilterApplier([_filter1, _filter2, _filter3]);
         }
 
         [Fact]
-        public void GivenTextInput_ShouldApplyFilter()
+        public void ApplyWithMultipleFilters_ShouldAggregateAllFilters()
         {
             var input = "Here is some text input: let's filter it";
-            var filteredInput = new string[] { "Here", "some", "text", "input:", "let's", "filter" };
-            _filter.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(filteredInput);
 
-            var expectedOutput = "Here some text input: let's filter";
+            _filter1.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some", "text", "input:", "let's", "filter" });
+            _filter2.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some", "text", "input:", "let's", "filter", "it"});
+            _filter3.Filter(It.IsAny<string[]>()).ReturnsForAnyArgs(new string[] { "Here", "is", "some" });
+
+            var expectedOutput = "Here is some";
 
             var result = _sut.Apply(input);
             Assert.Equal(expectedOutput, result);
