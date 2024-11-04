@@ -20,7 +20,7 @@ namespace TextFilteringApp.Services
             return string.Join(" ", filtered);
         }
 
-        private string[] SeparateTextIntoWords(string input)
+        public static string[] SeparateTextIntoWords(string input)
         {
             return Regex.Matches(input, @"\b\w+('\w+)?[^\w\s]*").Cast<Match>().Select(m => m.Value.Trim()).ToArray();
         }

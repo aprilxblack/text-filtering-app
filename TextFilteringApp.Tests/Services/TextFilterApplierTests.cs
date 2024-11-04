@@ -19,5 +19,16 @@ namespace TextFilteringApp.Tests.Services
         {
 
         }
+
+        [Theory]
+        [InlineData("Karolina is a software developer", new string[] { "Karolina", "is", "a", "software", "developer" })]
+        [InlineData("No, you can't have my pizza!", new string[] { "No,", "you", "can't", "have", "my", "pizza!" })]
+        [InlineData("What is this?I don't know!", new string[] { "What", "is", "this?", "I", "don't", "know!" })]
+        [InlineData("He said:'I can't do it'", new string[] { "He", "said:'", "I", "can't", "do", "it'"})]
+        public void SeparateTextIntoWords_ShouldSeparatecorrectly(string input, string[] expected)
+        {
+            var result = TextFilterApplier.SeparateTextIntoWords(input);
+            Assert.Equal(expected, result);
+        }
     }
 }
